@@ -65,12 +65,12 @@ public class LargestBST {
         int min = Math.min(root.data, Math.min(left.min, right.min));
         int max = Math.max(root.data, Math.max(left.max, right.max));
 
-        if (root.data > right.min || root.data<left.max) {
+        if (root.data >= right.min || root.data <= left.max) {
             return new info(size, max, min, false);
         }
         if (left.ans && right.ans) {
-            maxsize = size>maxsize ? size : maxsize;
             System.out.println(size);
+            maxsize = size>maxsize ? size : maxsize;
             return new info(size, max, min, true);
         }
         return new info(size, max, min, false);
@@ -79,8 +79,9 @@ public class LargestBST {
         int [] nodes = {50,30,5,-1,-1,20,-1,-1,60,45,-1,-1,70,65,-1,-1,80,-1,-1};
         Binary_Tree tree = new Binary_Tree();
         node root = tree.makeTree(nodes);
-        // System.out.println(root.data);
-        findingBST(root);
+        System.out.println(root.right.left.data);
+        info r = findingBST(root);
+        System.out.println(r.ans);
         System.out.println(maxsize);
     }
 }
