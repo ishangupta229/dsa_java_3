@@ -31,8 +31,6 @@ public class intro {
             if (curr.arr[word.charAt(i)-'a']==null) {
                 return false;   
             }
-            // if (i!=word.length()-1) {
-            // }
             curr = curr.arr[word.charAt(i)-'a'];
         }
         if (curr.eow==false) {
