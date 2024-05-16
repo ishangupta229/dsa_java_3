@@ -16,7 +16,7 @@ public class PQ {
         }
     }
     public static void main(String[] args) {
-        PriorityQueue <student> PQ = new PriorityQueue<>();
+        PriorityQueue <student> PQ = new PriorityQueue<>(Comparator.naturalOrder());
         PQ.add(new student("Ishan", 12));  
         PQ.add(new student("Ram", 2));  
         PQ.add(new student("Sham", 7));
